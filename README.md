@@ -1,0 +1,1 @@
+It is shop where people buy something for themselves or somebody.  
