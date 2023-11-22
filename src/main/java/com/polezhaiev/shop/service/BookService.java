@@ -2,7 +2,6 @@ package com.polezhaiev.shop.service;
 
 import com.polezhaiev.shop.dto.BookDto;
 import com.polezhaiev.shop.dto.CreateBookRequestDto;
-import com.polezhaiev.shop.model.Book;
 import java.util.List;
 
 public interface BookService {
@@ -12,9 +11,7 @@ public interface BookService {
 
     BookDto findById(Long id);
 
-    Book createBookDto(CreateBookRequestDto dto);
-
     void deleteById(Long id);
 
-    void updateBookById(Long id, CreateBookRequestDto requestDto);
+    BookDto updateBookById(Long id, CreateBookRequestDto requestDto);
 }
