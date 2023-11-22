@@ -73,12 +73,6 @@
 			<version>${mapstract.version}</version>
 		</dependency>
 	</dependencies>
-	<distributionManagement>
-		<repository>
-			<id>github</id>
-			<url>https://github.com/AndreyPolezhaiev/shop</url>
-		</repository>
-	</distributionManagement>
 	<build>
 		<plugins>
 			<plugin>
