@@ -1,10 +1,16 @@
 package com.polezhaiev.shop.service;
 
+import com.polezhaiev.shop.dto.BookDto;
+import com.polezhaiev.shop.dto.CreateBookRequestDto;
 import com.polezhaiev.shop.model.Book;
 import java.util.List;
 
 public interface BookService {
-    Book save(Book book);
+    BookDto save(CreateBookRequestDto requestDto);
 
-    List<Book> findAll();
+    List<BookDto> findAll();
+
+    BookDto findById(Long id);
+
+    Book createBookDto(CreateBookRequestDto dto);
 }

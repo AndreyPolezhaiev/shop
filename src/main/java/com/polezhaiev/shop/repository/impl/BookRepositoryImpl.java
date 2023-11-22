@@ -1,8 +1,11 @@
 package com.polezhaiev.shop.repository.impl;
 
+import com.polezhaiev.shop.exception.EntityNotFoundException;
 import com.polezhaiev.shop.model.Book;
 import com.polezhaiev.shop.repository.BookRepository;
+import jakarta.persistence.EntityManager;
 import java.util.List;
+import java.util.Optional;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -33,11 +36,21 @@ public class BookRepositoryImpl implements BookRepository {
             if (transaction != null) {
                 transaction.rollback();
             }
-            throw new RuntimeException("Can't find book: " + book, e);
+            throw new EntityNotFoundException("Can't find book: " + book, e);
         } finally {
             if (session != null) {
                 session.close();
             }
+        }
+    }
+
+    @Override
+    public Optional<Book> findById(Long id) {
+        try (EntityManager entityManager = sessionFactory.createEntityManager()) {
+            Book book = entityManager.find(Book.class, id);
+            return Optional.ofNullable(book);
+        } catch (RuntimeException e) {
+            throw new EntityNotFoundException("Can't find book by id: " + id, e);
         }
     }
 
@@ -47,7 +60,7 @@ public class BookRepositoryImpl implements BookRepository {
             Query<Book> query = session.createQuery("From Book", Book.class);
             return query.getResultList();
         } catch (RuntimeException e) {
-            throw new RuntimeException("Can't find all books", e);
+            throw new EntityNotFoundException("Can't find all books", e);
         }
     }
 }
