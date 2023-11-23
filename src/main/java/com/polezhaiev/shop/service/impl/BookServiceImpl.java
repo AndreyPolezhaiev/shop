@@ -9,10 +9,7 @@ import com.polezhaiev.shop.model.Book;
 import com.polezhaiev.shop.repository.book.BookRepository;
 import com.polezhaiev.shop.repository.book.spec.BookSpecificationBuilder;
 import com.polezhaiev.shop.service.BookService;
-
-import java.util.Arrays;
 import java.util.List;
-
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;

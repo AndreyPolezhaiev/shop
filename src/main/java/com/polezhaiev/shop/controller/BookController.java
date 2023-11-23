@@ -4,8 +4,6 @@ import com.polezhaiev.shop.dto.BookDto;
 import com.polezhaiev.shop.dto.BookSearchParametersDto;
 import com.polezhaiev.shop.dto.CreateBookRequestDto;
 import com.polezhaiev.shop.service.BookService;
-
-import java.util.Collections;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
