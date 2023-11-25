@@ -1,6 +1,5 @@
 package com.polezhaiev.shop.exception;
 
-import jakarta.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -20,10 +19,10 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 public class CustomGlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(
-            @NotNull MethodArgumentNotValidException ex,
-            @NotNull HttpHeaders headers,
-            @NotNull HttpStatusCode status,
-            @NotNull WebRequest request
+            MethodArgumentNotValidException ex,
+            HttpHeaders headers,
+            HttpStatusCode status,
+            WebRequest request
     ) {
         Map<String, Object> body = new LinkedHashMap<>();
         body.put("timestamp", LocalDateTime.now());
