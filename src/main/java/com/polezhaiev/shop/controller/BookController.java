@@ -1,9 +1,9 @@
 package com.polezhaiev.shop.controller;
 
-import com.polezhaiev.shop.dto.BookDto;
-import com.polezhaiev.shop.dto.BookSearchParametersDto;
-import com.polezhaiev.shop.dto.CreateBookRequestDto;
-import com.polezhaiev.shop.service.BookService;
+import com.polezhaiev.shop.dto.book.BookDto;
+import com.polezhaiev.shop.dto.book.BookSearchParametersDto;
+import com.polezhaiev.shop.dto.book.CreateBookRequestDto;
+import com.polezhaiev.shop.service.book.BookService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;

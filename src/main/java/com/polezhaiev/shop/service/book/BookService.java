@@ -1,8 +1,8 @@
-package com.polezhaiev.shop.service;
+package com.polezhaiev.shop.service.book;
 
-import com.polezhaiev.shop.dto.BookDto;
-import com.polezhaiev.shop.dto.BookSearchParametersDto;
-import com.polezhaiev.shop.dto.CreateBookRequestDto;
+import com.polezhaiev.shop.dto.book.BookDto;
+import com.polezhaiev.shop.dto.book.BookSearchParametersDto;
+import com.polezhaiev.shop.dto.book.CreateBookRequestDto;
 import java.util.List;
 import org.springframework.data.domain.Pageable;
 

@@ -1,4 +1,4 @@
-package com.polezhaiev.shop.dto;
+package com.polezhaiev.shop.dto.book;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
