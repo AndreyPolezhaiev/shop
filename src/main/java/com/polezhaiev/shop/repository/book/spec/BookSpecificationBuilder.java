@@ -1,6 +1,6 @@
 package com.polezhaiev.shop.repository.book.spec;
 
-import com.polezhaiev.shop.dto.BookSearchParametersDto;
+import com.polezhaiev.shop.dto.book.BookSearchParametersDto;
 import com.polezhaiev.shop.model.Book;
 import com.polezhaiev.shop.repository.SpecificationBuilder;
 import com.polezhaiev.shop.repository.SpecificationProviderManager;

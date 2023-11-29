@@ -1,14 +1,14 @@
-package com.polezhaiev.shop.service.impl;
+package com.polezhaiev.shop.service.book.impl;
 
-import com.polezhaiev.shop.dto.BookDto;
-import com.polezhaiev.shop.dto.BookSearchParametersDto;
-import com.polezhaiev.shop.dto.CreateBookRequestDto;
+import com.polezhaiev.shop.dto.book.BookDto;
+import com.polezhaiev.shop.dto.book.BookSearchParametersDto;
+import com.polezhaiev.shop.dto.book.CreateBookRequestDto;
 import com.polezhaiev.shop.exception.EntityNotFoundException;
 import com.polezhaiev.shop.mapper.BookMapper;
 import com.polezhaiev.shop.model.Book;
 import com.polezhaiev.shop.repository.book.BookRepository;
 import com.polezhaiev.shop.repository.book.spec.BookSpecificationBuilder;
-import com.polezhaiev.shop.service.BookService;
+import com.polezhaiev.shop.service.book.BookService;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
