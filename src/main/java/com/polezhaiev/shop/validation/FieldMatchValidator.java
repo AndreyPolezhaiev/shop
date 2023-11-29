@@ -1,10 +1,12 @@
-package com.polezhaiev.shop.annotation;
+package com.polezhaiev.shop.validation;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import org.springframework.beans.BeanWrapper;
 import org.springframework.beans.BeanWrapperImpl;
 import org.springframework.stereotype.Component;
+
+import java.util.Objects;
 
 @Component
 public class FieldMatchValidator implements ConstraintValidator<FieldMatch, Object> {
@@ -23,7 +25,6 @@ public class FieldMatchValidator implements ConstraintValidator<FieldMatch, Obje
         Object firstObj = wrapper.getPropertyValue(firstFieldName);
         Object secondObj = wrapper.getPropertyValue(secondFieldName);
 
-        return firstObj == null && secondObj == null
-                || firstObj != null && firstObj.equals(secondObj);
+        return Objects.equals(firstObj, secondObj);
     }
 }

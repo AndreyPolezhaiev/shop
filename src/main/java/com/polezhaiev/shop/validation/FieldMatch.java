@@ -1,4 +1,4 @@
-package com.polezhaiev.shop.annotation;
+package com.polezhaiev.shop.validation;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
