@@ -12,7 +12,7 @@ public class CreateBookRequestDto {
     private String title;
     @NotNull
     private String author;
-    @ISBN
+    @ISBN(type = ISBN.Type.ISBN_10)
     private String isbn;
     @Min(0)
     private BigDecimal price;
