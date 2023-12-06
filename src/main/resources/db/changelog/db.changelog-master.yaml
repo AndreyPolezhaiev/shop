@@ -3,4 +3,12 @@ databaseChangeLog:
       file: db/changelog/changes/01-create-books-table.yaml
   - include:
       file: db/changelog/changes/01-create-users-table.yaml
+  - include:
+      file: db/changelog/changes/01-create-roles-table.yaml
+  - include:
+      file: db/changelog/changes/insert-roles.yaml
+  - include:
+      file: db/changelog/changes/01-create-users-roles-table.yaml
+  - include:
+      file: db/changelog/changes/02-add-users-roles-foreign-keys.yaml
 
