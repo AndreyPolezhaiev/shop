@@ -1,6 +1,7 @@
 package com.polezhaiev.shop.service.book.impl;
 
 import com.polezhaiev.shop.dto.book.BookDto;
+import com.polezhaiev.shop.dto.book.BookDtoWithoutCategoryIds;
 import com.polezhaiev.shop.dto.book.BookSearchParametersDto;
 import com.polezhaiev.shop.dto.book.CreateBookRequestDto;
 import com.polezhaiev.shop.exception.EntityNotFoundException;
@@ -64,6 +65,14 @@ public class BookServiceImpl implements BookService {
         return bookRepository.findAll(bookSpecification)
                 .stream()
                 .map(bookMapper::toDto)
+                .toList();
+    }
+
+    @Override
+    public List<BookDtoWithoutCategoryIds> findAllByCategories_Id(Long categoryId) {
+        return bookRepository.findAllByCategories_Id(categoryId)
+                .stream()
+                .map(bookMapper::toDtoWcIds)
                 .toList();
     }
 }
