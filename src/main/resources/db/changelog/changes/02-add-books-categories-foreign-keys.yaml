@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: 02-add-books-categories-foreign-keys
+      author: polezhaiev
+      changes:
+        - addForeignKeyConstraint:
+            baseTableName: books_categories
+            baseColumnNames: book_id
+            referencedTableName: books
+            referencedColumnNames: id
+            constraintName: fk_book_id
+        - addForeignKeyConstraint:
+            baseTableName: books_categories
+            baseColumnNames: category_id
+            referencedTableName: categories
+            referencedColumnNames: id
+            constraintName: fk_category_id
