@@ -6,12 +6,14 @@ import com.polezhaiev.shop.dto.book.BookDtoWithoutCategoryIds;
 import com.polezhaiev.shop.dto.book.CreateBookRequestDto;
 import com.polezhaiev.shop.model.Book;
 import com.polezhaiev.shop.model.Category;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 import org.mapstruct.AfterMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
+import org.mapstruct.Named;
 
 @Mapper(config = MapperConfig.class)
 public interface BookMapper {
@@ -40,4 +42,11 @@ public interface BookMapper {
     }
 
     BookDtoWithoutCategoryIds toDtoWcIds(Book book);
+
+    @Named("bookById")
+    default Book bookById(Long id) {
+        return Optional.ofNullable(id)
+                .map(Book::new)
+                .orElse(null);
+    }
 }
