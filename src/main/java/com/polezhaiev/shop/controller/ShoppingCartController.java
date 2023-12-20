@@ -37,7 +37,7 @@ public class ShoppingCartController {
     public ShoppingCartResponseDto addBookToShoppingCart(
             Authentication authentication, @RequestBody CartItemRequestDto requestDto) {
         User user = (User) authentication.getPrincipal();
-        return shoppingCartService.addBookToShopCart(user.getId(), requestDto);
+        return shoppingCartService.addBookToShoppingCart(user.getId(), requestDto);
     }
 
     @Operation(summary = "Update quantity of a book",
@@ -45,13 +45,13 @@ public class ShoppingCartController {
     @PutMapping("/cart-items/{id}")
     public ShoppingCartResponseDto updateQuantityOfABook(
             @PathVariable Long id, @RequestBody CartItemUpdateRequestDto requestDto) {
-        return shoppingCartService.updateQuantityOfABook(id, requestDto);
+        return shoppingCartService.updateCartItem(id, requestDto);
     }
 
     @Operation(summary = "Delete the book",
             description = "Delete the book")
     @DeleteMapping("/cart-items/{id}")
     public void deleteBook(@PathVariable Long id) {
-        shoppingCartService.deleteById(id);
+        shoppingCartService.deleteShoppingCartById(id);
     }
 }

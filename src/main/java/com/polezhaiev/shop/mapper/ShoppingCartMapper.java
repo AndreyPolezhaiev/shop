@@ -1,7 +1,6 @@
 package com.polezhaiev.shop.mapper;
 
 import com.polezhaiev.shop.config.MapperConfig;
-import com.polezhaiev.shop.dto.shopcart.CartItemRequestDto;
 import com.polezhaiev.shop.dto.shopcart.ShoppingCartResponseDto;
 import com.polezhaiev.shop.model.CartItem;
 import com.polezhaiev.shop.model.ShoppingCart;
@@ -27,8 +26,4 @@ public interface ShoppingCartMapper {
                 .collect(Collectors.toSet());
         responseDto.setCartItemsIds(cartItemsIds);
     }
-
-    @Mapping(target = "book", source = "bookId", qualifiedByName = "bookById")
-    @Mapping(target = "shoppingCart", ignore = true)
-    CartItem toModel(CartItemRequestDto requestDto);
 }

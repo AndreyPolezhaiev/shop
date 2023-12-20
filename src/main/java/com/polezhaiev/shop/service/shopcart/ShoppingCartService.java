@@ -7,9 +7,9 @@ import com.polezhaiev.shop.dto.shopcart.ShoppingCartResponseDto;
 public interface ShoppingCartService {
     ShoppingCartResponseDto getShoppingCart(Long id);
 
-    ShoppingCartResponseDto addBookToShopCart(Long id, CartItemRequestDto requestDto);
+    ShoppingCartResponseDto addBookToShoppingCart(Long id, CartItemRequestDto requestDto);
 
-    ShoppingCartResponseDto updateQuantityOfABook(Long id, CartItemUpdateRequestDto requestDto);
+    ShoppingCartResponseDto updateCartItem(Long id, CartItemUpdateRequestDto requestDto);
 
-    void deleteById(Long id);
+    void deleteShoppingCartById(Long id);
 }
