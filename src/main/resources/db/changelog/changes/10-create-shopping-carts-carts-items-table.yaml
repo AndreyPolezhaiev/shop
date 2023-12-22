@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: 10-create-shopping-carts-carts-items-table
+      author: polezhaiev
+      changes:
+        - createTable:
+            tableName: shopping_carts_carts_items
+            columns:
+              - column:
+                  name: shopping_cart_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_shopping_carts_carts_items_shopping_carts
+                    referencedTableName: shopping_carts
+                    referencedColumnNames: id
+                    primaryKey: true
+              - column:
+                  name: cart_item_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_shopping_carts_carts_items_carts_items
+                    referencedTableName: carts_items
+                    referencedColumnNames: id
+                    primaryKey: true

@@ -1,0 +1,45 @@
+databaseChangeLog:
+  - changeSet:
+      id: 08-create-carts-items-table
+      author: polezhaiev
+      changes:
+        - createTable:
+            tableName: carts_items
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: shopping_cart_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_carts_items_shopping_carts
+                    referencedTableName: shopping_carts
+                    referencedColumnNames: id
+                    primaryKey: true
+              - column:
+                  name: book_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_carts_items_books
+                    referencedTableName: books
+                    referencedColumnNames: id
+                    primaryKey: true
+              - column:
+                  name: quantity
+                  type: INT
+                  constraints:
+                    primaryKey: false
+                    nullable: false
+              - column:
+                  name: is_deleted
+                  type: boolean
+                  defaultValueBoolean: false
+                  constraints:
+                    nullable: false

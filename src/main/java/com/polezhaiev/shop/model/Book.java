@@ -30,10 +30,10 @@ public class Book {
     private BigDecimal price;
     private String description;
 
-    @ManyToMany
     @JoinTable(name = "books_categories",
             joinColumns = @JoinColumn(name = "book_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id"))
+    @ManyToMany
     private Set<Category> categories;
 
     @Column(name = "cover_image")
@@ -41,4 +41,11 @@ public class Book {
 
     @Column(nullable = false, name = "is_deleted")
     private boolean isDeleted = false;
+
+    public Book(Long id) {
+        this.id = id;
+    }
+
+    public Book() {
+    }
 }

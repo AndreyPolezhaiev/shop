@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: 01-create-users-table
+      id: 02-create-users-table
       author: polezhaiev
       changes:
         - createTable:
