@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: 13-create-orders-orders-items-table
+      author: polezhaiev
+      changes:
+        - createTable:
+            tableName: orders_orders_items
+            columns:
+              - column:
+                  name: order_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_orders_orders_items_orders
+                    referencedTableName: orders
+                    referencedColumnNames: id
+                    primaryKey: true
+              - column:
+                  name: order_item_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_orders_orders_items_orders_items
+                    referencedTableName: orders_items
+                    referencedColumnNames: id
+                    primaryKey: true
