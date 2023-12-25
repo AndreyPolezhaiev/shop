@@ -1,9 +1,9 @@
 package com.polezhaiev.shop.controller;
 
+import com.polezhaiev.shop.dto.order.item.OrderItemResponseDto;
 import com.polezhaiev.shop.dto.order.order.OrderMakeRequestDto;
 import com.polezhaiev.shop.dto.order.order.OrderResponseDto;
 import com.polezhaiev.shop.dto.order.order.OrderUpdateStatusRequestDto;
-import com.polezhaiev.shop.dto.order.orderItem.OrderItemResponseDto;
 import com.polezhaiev.shop.model.User;
 import com.polezhaiev.shop.service.order.OrderService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -41,21 +41,26 @@ public class OrderController {
         return orderService.findAllOrders(user.getId());
     }
 
-    @Operation(summary = "Find all items in the order", description = "Find all items in the order")
+    @Operation(summary = "Find all items in the order",
+            description = "Find all items in the order")
     @GetMapping("{orderId}/items")
     public List<OrderItemResponseDto> findAllItemsInOrder(@PathVariable Long orderId) {
         return orderService.findAllItemsInOrder(orderId);
     }
 
-    @Operation(summary = "Find the item in order", description = "Find the item in order")
+    @Operation(summary = "Find the item in order",
+            description = "Find the item in order")
     @GetMapping("{orderId}/items/{orderItemId}")
     public OrderItemResponseDto findItemForOrder(
-            Authentication authentication, @PathVariable Long orderId, @PathVariable Long orderItemId) {
+            Authentication authentication,
+            @PathVariable Long orderId,
+            @PathVariable Long orderItemId) {
         User user = (User) authentication.getPrincipal();
         return orderService.findItemForOrder(orderId, orderItemId);
     }
 
-    @Operation(summary = "Update the status of the order", description = "Update the status of the order")
+    @Operation(summary = "Update the status of the order",
+            description = "Update the status of the order")
     @PutMapping("/{orderId}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public OrderResponseDto updateStatus(

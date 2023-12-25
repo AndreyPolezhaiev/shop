@@ -1,6 +1,5 @@
-package com.polezhaiev.shop.dto.order.orderItem;
+package com.polezhaiev.shop.dto.order.item;
 
-import java.util.Set;
 import lombok.Data;
 
 @Data

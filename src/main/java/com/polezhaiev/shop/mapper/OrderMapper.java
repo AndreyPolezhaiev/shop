@@ -4,12 +4,12 @@ import com.polezhaiev.shop.config.MapperConfig;
 import com.polezhaiev.shop.dto.order.order.OrderResponseDto;
 import com.polezhaiev.shop.model.Order;
 import com.polezhaiev.shop.model.OrderItem;
+import java.util.Set;
+import java.util.stream.Collectors;
 import org.mapstruct.AfterMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 @Mapper(config = MapperConfig.class)
 public interface OrderMapper {

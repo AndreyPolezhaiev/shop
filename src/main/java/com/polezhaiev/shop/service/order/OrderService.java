@@ -1,9 +1,9 @@
 package com.polezhaiev.shop.service.order;
 
+import com.polezhaiev.shop.dto.order.item.OrderItemResponseDto;
 import com.polezhaiev.shop.dto.order.order.OrderMakeRequestDto;
 import com.polezhaiev.shop.dto.order.order.OrderResponseDto;
 import com.polezhaiev.shop.dto.order.order.OrderUpdateStatusRequestDto;
-import com.polezhaiev.shop.dto.order.orderItem.OrderItemResponseDto;
 import java.util.List;
 
 public interface OrderService {

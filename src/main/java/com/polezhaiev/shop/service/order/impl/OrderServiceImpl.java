@@ -1,9 +1,9 @@
 package com.polezhaiev.shop.service.order.impl;
 
+import com.polezhaiev.shop.dto.order.item.OrderItemResponseDto;
 import com.polezhaiev.shop.dto.order.order.OrderMakeRequestDto;
 import com.polezhaiev.shop.dto.order.order.OrderResponseDto;
 import com.polezhaiev.shop.dto.order.order.OrderUpdateStatusRequestDto;
-import com.polezhaiev.shop.dto.order.orderItem.OrderItemResponseDto;
 import com.polezhaiev.shop.exception.EntityNotFoundException;
 import com.polezhaiev.shop.mapper.OrderItemMapper;
 import com.polezhaiev.shop.mapper.OrderMapper;
@@ -42,7 +42,7 @@ public class OrderServiceImpl implements OrderService {
         order.setUser(shoppingCart.getUser());
         order.setOrderDate(LocalDateTime.now());
         order.setShippingAddress(requestDto.getShippingAddress());
-        order.setStatus(Status.COMPLETED);
+        order.setStatus(Status.PENDING);
         order.setOrderDate(LocalDateTime.now());
         order.setTotal(BigDecimal.ONE);
         orderRepository.save(order);
