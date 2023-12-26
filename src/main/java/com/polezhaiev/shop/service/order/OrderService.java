@@ -17,5 +17,5 @@ public interface OrderService {
 
     OrderResponseDto updateStatus(Long orderId, OrderUpdateStatusRequestDto requestDto);
 
-    void deleteOrderItemById(Long id);
+    void deleteOrderItemById(Long userId, Long id);
 }

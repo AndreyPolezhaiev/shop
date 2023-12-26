@@ -71,7 +71,8 @@ public class OrderController {
     @Operation(summary = "Delete the item", description = "Delete the item")
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('ROLE_USER')")
-    public void deleteOrderItemById(@PathVariable Long id) {
-        orderService.deleteOrderItemById(id);
+    public void deleteOrderItemById(Authentication authentication, @PathVariable Long id) {
+        User user = (User) authentication.getPrincipal();
+        orderService.deleteOrderItemById(user.getId(), id);
     }
 }

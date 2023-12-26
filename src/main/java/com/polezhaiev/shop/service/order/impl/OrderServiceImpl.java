@@ -20,6 +20,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Set;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -105,7 +106,14 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public void deleteOrderItemById(Long id) {
-        orderItemRepository.deleteById(id);
+    public void deleteOrderItemById(Long userId, Long id) {
+        Long userIdFromRepo = orderItemRepository.getById(id).getOrder().getUser().getId();
+        if (userId.equals(userIdFromRepo)) {
+            orderItemRepository.deleteById(id);
+        } else {
+            throw new NoSuchElementException(
+                    "Item by id:" + id + " belongs to user by id: " + userIdFromRepo
+            );
+        }
     }
 }
