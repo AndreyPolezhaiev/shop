@@ -4,6 +4,7 @@ import com.polezhaiev.shop.dto.order.item.OrderItemResponseDto;
 import com.polezhaiev.shop.dto.order.order.OrderMakeRequestDto;
 import com.polezhaiev.shop.dto.order.order.OrderResponseDto;
 import com.polezhaiev.shop.dto.order.order.OrderUpdateStatusRequestDto;
+import com.polezhaiev.shop.exception.AccessDeniedException;
 import com.polezhaiev.shop.exception.EntityNotFoundException;
 import com.polezhaiev.shop.mapper.OrderItemMapper;
 import com.polezhaiev.shop.mapper.OrderMapper;
@@ -20,7 +21,6 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.Set;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -111,7 +111,7 @@ public class OrderServiceImpl implements OrderService {
         if (userId.equals(userIdFromRepo)) {
             orderItemRepository.deleteById(id);
         } else {
-            throw new NoSuchElementException(
+            throw new AccessDeniedException(
                     "Item by id:" + id + " belongs to user by id: " + userIdFromRepo
             );
         }
