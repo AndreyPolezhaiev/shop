@@ -1,0 +1,44 @@
+databaseChangeLog:
+  - changeSet:
+      id: 11-create-orders-table
+      author: polezhaiev
+      changes:
+        - createTable:
+            tableName: orders
+            columns:
+              - column:
+                  name: id
+                  type: bigInt
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: bigInt
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_orders_users
+                    referencedTableName: users
+                    referencedColumnNames: id
+                    primaryKey: true
+              - column:
+                  name: status
+                  type: tinyint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: total
+                  type: Decimal
+                  constraints:
+                    nullable: false
+              - column:
+                  name: order_date
+                  type: DATETIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: shipping_address
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
