@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: 09-create-shopping-carts-table
+      id: 08-create-shopping-carts-table
       author: polezhaiev
       changes:
         - createTable:
