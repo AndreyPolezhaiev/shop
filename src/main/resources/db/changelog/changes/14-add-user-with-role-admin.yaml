@@ -1,0 +1,26 @@
+databaseChangeLog:
+  - changeSet:
+      id: 14-add-user-with-role-admin
+      author: polezhaiev
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 1
+              - column:
+                  name: email
+                  value: admin@gmail.com
+              - column:
+                  name: first_name
+                  value: Admin
+              - column:
+                  name: last_name
+                  value: Admin
+              - column:
+                  name: shipping_address
+                  value: admin.address 001
+              - column:
+                  name: password
+                  value: $2a$10$xMlR.f3iiByehCmAPdPEIue0on7R3BHXegNt6ooXnM54GClMOUOsu
