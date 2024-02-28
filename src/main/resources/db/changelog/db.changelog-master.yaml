@@ -29,3 +29,5 @@ databaseChangeLog:
       file: db/changelog/changes/14-add-user-with-role-admin.yaml
   - include:
       file: db/changelog/changes/15-set-admin-role-for-user-admin.yaml
+  - include:
+      file: db/changelog/changes/16-insert-into=shopping-cart-user-id.yaml
