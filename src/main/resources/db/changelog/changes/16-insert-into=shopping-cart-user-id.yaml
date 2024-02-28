@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: 16-insert-into=shopping-cart-user-id
+      author: polezhaiev
+      changes:
+        - insert:
+            tableName: shopping_carts
+            columns:
+              - column:
+                  name: id
+                  valueNumeric: 1
+              - column:
+                  name: user_id
+                  valueNumeric: 1
