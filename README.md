@@ -132,4 +132,4 @@ Regarding authentication, I found another programmers' sollutions and remade a f
     - Delete the category
  
 ## **Loom video with instruction to my project**
-https://www.loom.com/share/fb5759396c3041d5aa479c24c61cdcb7?sid=aa759aa3-531c-4e6c-8676-cba33fc29011
+https://www.loom.com/share/8e83af53848044a98fc94f68efa7e4e2?sid=ae9a3ea1-3852-43c0-bb76-be74bc9538c4
